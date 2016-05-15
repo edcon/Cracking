@@ -20,7 +20,7 @@ public class QuestionOne {
   }
 
   public static boolean isUnique(String ex){
-    boolean[] array = new boolean[128];  //initializes Boolean Array to all False
+    boolean[] array = new boolean[256];  //initializes Boolean Array to all False
 
     for (int i = 0;i < ex.length(); i++){
       int c = ex.charAt(i);
