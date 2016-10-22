@@ -8,23 +8,26 @@ public static void main(String[] args){
         head.appendToTail(3);
         head.appendToTail(8);
         head.appendToTail(1);
-        head.appendToTail(2);
+        head.appendToTail(0);
         head.appendToTail(2);
         head.appendToTail(7);
+        head.appendToTail(3);
+
 
         System.out.println("---- Before: -----");
         head.printList();
 
         int currentInt;
         Node n = head;
-        Node runner = head;
-        while(n.next != null){
-            currentInt = n.data;
+        
+        while(n != null){
+            Node runner = n;
             while(runner.next!= null){
-                if(runner.data == currentInt){
+                if(runner.next.data == n.data){
                     runner.next = runner.next.next;
+                } else {
+                    runner = runner.next;
                 }
-                runner = runner.next;
             }
         n = n.next;
         }
@@ -77,7 +80,7 @@ class Node{
 
         void printList(){
             Node n = this;
-            while(n.next != null){
+            while(n != null){
                 System.out.printf(n.data + "  ");
                 n = n.next;
             }
